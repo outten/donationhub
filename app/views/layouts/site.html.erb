@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>The Donation Hub</title>
+		<link href="/i/favicon.png" rel="Shortcut Icon" />
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,700" rel="stylesheet">
+		<%= stylesheet_link_tag    'site', media: 'all' %>
+		<%= stylesheet_link_tag    'responsive', media: 'all' %>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<%= render partial: 'shared/site_header' %>
+
+		<%= yield %>
+
+		<div class="lightbox_bkg"></div>
+		<%= javascript_include_tag 'site' %>
+	</body>
+</html>
