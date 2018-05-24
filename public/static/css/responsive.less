@@ -1,0 +1,40 @@
+@primary_font: 'Montserrat', sans-serif;
+@secondary_font: 'Architects Daughter', cursive;
+@accent_color: #061115;
+@highlight_color: #32d6d8;
+
+@link_initial: "../";
+
+@media all and(max-height: 900px){
+	.theater_list{
+		>li{
+			&.active{
+				.theater_content{
+					top: 25%;
+				}
+			}
+		}
+	}
+	.slide_index{
+		top: 25%;
+	}
+}
+
+@media all and(max-width: 500px){
+	html{font-size: 30px;}
+	.site_contain{
+		padding: 0 3.25em;
+	}
+	.theater_content{
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	.slide_index{
+		left: .5em;
+		top: 28%;
+	}
+	.scroll_indicator{
+		display: none;
+	}
+}
