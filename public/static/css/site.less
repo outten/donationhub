@@ -3,6 +3,8 @@
 @accent_color: #061115;
 @highlight_color: #32d6d8;
 
+@link_initial: "/static/";
+
 *{padding: 0; margin: 0;}
 html{height: 100%;}
 body{
@@ -138,14 +140,14 @@ img{max-width: 100%;}
 
 // ----------------Header----------------
 #site_header{
-	position: fixed;
+	position: absolute;
 	z-index: 99;
 }
 #site_logo{
 	width: 20em;
 	height: 5em;
 	margin-top: 2em;
-	background-image: url(/static/i/site_logo.png);
+	background-image: url("@{link_initial}i/site_logo_white.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
@@ -239,7 +241,8 @@ img{max-width: 100%;}
 	line-height: 1;
 	&:after{
 		content: "";
-		background-image: url(/static/i/site_sprite.png);
+		background-image: url("@{link_initial}i/site_sprite.png");
+		background-size: 850%;
 		width: 1.4em;
 		height: 1.6em;
 		position: absolute;
@@ -309,7 +312,7 @@ img{max-width: 100%;}
 
 .theater_content{
 	position: absolute;
-	top: -40%;
+	top: -35%;
 	left: 14em;
 	width: 31.7em;
 	opacity: 0;
@@ -340,12 +343,10 @@ img{max-width: 100%;}
 .scroll_indicator{
 	width: 2em;
 	height: 3em;
-	background-image: url(/static/i/site_sprite.png);
+	margin-top: 1em;
+	background-image: url("@{link_initial}i/site_sprite.png");
 	background-position: 22% 0;
 	background-size: 690%;
-	position: absolute;
-	left: 14em;
-	bottom: 15%;
 }
 
 // Slide Index
@@ -412,7 +413,7 @@ img{max-width: 100%;}
 	width: 2.4em;
 	height: 2.3em;
 	display: inline-block;
-	background-image: url(/static/i/site_sprite.png);
+	background-image: url("@{link_initial}i/site_sprite.png");
 	background-position: 49% 0%;
 	background-size: 690%;
 	margin-top: -1.2em;
@@ -433,7 +434,7 @@ img{max-width: 100%;}
 		content: "";
 		width: 2em;
 		height: 1.9em;
-		background-image: url(/static/i/site_sprite.png);
+		background-image: url("@{link_initial}i/site_sprite.png");
 		background-position: 49% 0;
 		background-size: 690%;
 		position: absolute;
@@ -444,7 +445,7 @@ img{max-width: 100%;}
 
 // --------------Sponsors--------------
 #sponsors{
-	background-image: url(/static/i/sponsors_img.jpg);
+	background-image: url("@{link_initial}i/sponsors_img.jpg");
 	background-size: cover;
 	color: #fff;
 	.learn_more_btn{
