@@ -1,12 +1,3 @@
-$(window).on("load" ,function(){
-	setTimeout(function(){
-		$(".load_screen").fadeOut();
-	},3200);
-	setTimeout(function(){
-		$(".theater_list >li:first").removeClass("start");
-	},2300)
-});
-//$(".load_screen").fadeOut();
 var responsive_window = function(){
 	var max_width = 1200;
 	$(window).resize(function(){
@@ -48,29 +39,6 @@ $(".exit_menu_btn").click(function(){
 	$(".lightbox_bkg").fadeOut();
 })
 
-$(".deck_link").click(function(){
-	$("#site_menu").removeClass("active");
-})
-
-// Site Navigation
-var navigation = function(){
-
-	$(".nav_list a").click(function(e){
-		var hash = this.hash;
-		var s_hash = hash.split("?");
-
-		var href = s_hash[0];
-		var header_height = $("header").outerHeight(true);
-		var anchor = $(href).offset().top;
-		var body_pos = Math.abs($("body").scrollTop());
-		var body = $("html,body");
-
-		body.stop().animate({scrollTop: (anchor + body_pos)}, 500, 'swing');
-		$("#site_menu").removeClass("active");
-		$(".lightbox_bkg").fadeOut();
-	})
-}();
-
 // -----------Lightbox functions-----------
 function lightbox(type, content){
 	$(".lightbox").attr('lb-type', type);
@@ -102,37 +70,6 @@ $("#lightbox_contain").click(function(e){
 		}
 	}
 })
-$(".lb_btn").click(function(){
-	var content_name = $(this).attr("lb-content");
-	var content = $(".lb_content[lb-content=" + content_name + "]").html();
-	lightbox("contact", content);
-})
-
-// Subscribe
-$("#subscribe_form").on("submit", function(e){
-	e.preventDefault();
-	var email = $(this).find("#subscribe_email").val();
-	var id = "c673411e11";
-
-	// $.post("https://usX.api.mailchimp.com/3.0/lists/c673411e11/members/",{
-	// 	email_address : email,
- //    	status : "subscribed"
-	// })
-	// .done(function(data){
-	// 	console.log(data);
-	// })
-console.log(email)
-	$.ajax({
-	    type: 'POST',
-	    url: 'https://usX.api.mailchimp.com/3.0/lists/c673411e11/members/',
-	    data: ({email_address: 'arisnunez@gmail.com', status : "subscribed"}),
-	    success: function(data){
-	    	console.log(data)
-	    },
-	    contentType: "application/json",
-	    dataType: 'json'
-	});
-})
 
 // Home Theater
 var home_theater = function(){	
@@ -155,6 +92,7 @@ var home_theater = function(){
 	//Slide Scroll
 	var scroll_through = false;
 	$('#home_theater').bind('mousewheel DOMMouseScroll', theater_slide_action);
+
 
 	// Touch Slide
 	$("#home_theater").bind('touchstart', handleTouchStart);        
@@ -218,25 +156,6 @@ var home_theater = function(){
 		   }
 	 	}
 	}
-	$(".slide_index").on("click", "li", function(){
-		var active_slide = $(".slide_index >li.active").index();
-		var index = $(this).index();
-		var slides = $(".theater_list >li");
-
-		$(".slide_index >li").removeClass("active");
-		$(this).addClass("active");
-
-		slides.removeClass("active up");
-		slides.eq(index).addClass("active");
-		slides.eq(index).prevAll().addClass("active up");
-
-		if($(".theater_list > li").last().hasClass("active")){
-   		setTimeout(release_scroll, 1000);
-   		function release_scroll(){
-   			scroll_through = true;
-   		}		      		
-   	}
-	})
 
    function scroll_up(){
 		if($(".theater_list >li.active").prev("li").length != 0){

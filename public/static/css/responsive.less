@@ -6,6 +6,9 @@
 @link_initial: "../";
 
 @media all and(max-height: 900px){
+	.nav_list{
+		margin: 6vh 0 2em;
+	}
 	.theater_list{
 		>li{
 			&.active{
@@ -13,28 +16,50 @@
 					top: 25%;
 				}
 			}
+
 		}
 	}
+	.theater_content{
+		font-size: .85em;
+	}
 	.slide_index{
-		top: 25%;
+		top: 28.3%;
 	}
 }
 
-@media all and(max-width: 500px){
+@media all and(max-width: 600px){
 	html{font-size: 30px;}
+	.load_screen svg{
+	    width: 15em;
+	}
 	.site_contain{
 		padding: 0 3.25em;
-	}
+	}			
 	.theater_content{
 		left: 0;
 		right: 0;
+		width: 32em;
 		margin: auto;
 	}
+	.theater_content_title{
+		font-size: auto;
+	}
+	.theater_content_impact{
+		font-size: 1.43em;
+	}
 	.slide_index{
-		left: .5em;
-		top: 28%;
+		left: 2em;
+		top: 29.6%;
 	}
 	.scroll_indicator{
 		display: none;
+	}
+	.footer_links{
+		>li{
+			padding: 0 4em;
+		}
+	}
+	.section_content{
+		font-size: 1.2em;
 	}
 }
