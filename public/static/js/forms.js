@@ -23,16 +23,16 @@ function processForm(e,$form_origin) {
     // do something
     alert('success! check spreadsheet')
   });
-})
+}
 
 $('#non_profits_submit').on('click', function(e) {
-  processForm(e,$('form.non_profits_site_form'))
+  processForm(e,$('form#non_profits_site_form').first())
 })
 
 $('#sponsors_submit').on('click', function(e) {
-  processForm(e,$('form.sponsors_site_form'))
+  processForm(e,$('form#sponsors_site_form').first())
 })
 
 $('#pitch_deck_submit').on('click', function(e) {
-  processForm(e,$('form.pitch_deck_site_form'))
+  processForm(e,$('form#pitch_deck_site_form').first())
 })
