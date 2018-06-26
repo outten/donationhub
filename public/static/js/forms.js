@@ -25,14 +25,15 @@ function processForm(e,$form_origin) {
   });
 }
 
-$('#non_profits_submit').on('click', function(e) {
+
+$('.lb_content_contain').on('submit', '#non_profits_site_form', function(e) {
   processForm(e,$('form#non_profits_site_form').first())
 })
 
-$('#sponsors_submit').on('click', function(e) {
+$('.lb_content_contain').on('submit', '#sponsors_site_form', function(e) {
   processForm(e,$('form#sponsors_site_form').first())
 })
 
-$('#pitch_deck_submit').on('click', function(e) {
+$('.lb_content_contain').on('submit', '#pitch_deck_site_form', function(e) {
   processForm(e,$('form#pitch_deck_site_form').first())
 })
