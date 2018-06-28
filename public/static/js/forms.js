@@ -12,28 +12,31 @@ function getFormData($form_input){
     return indexed_array;
 }
 
-function processForm(e,$form_origin) {
+function processForm(e,$form_origin,contact_response) {
   e.preventDefault();
   var jqxhr = $.ajax({
     url: url,
     method: "GET",
     dataType: "json",
     data: getFormData($form_origin)
-  }).done(function() {
-    // do something
-    alert('success! check spreadsheet')
+  }).done(function(){
+    $(".lightbox").attr("lb-type", "response");
+    $(".lb_content_contain").html(contact_response);
   });
 }
 
 
 $('.lb_content_contain').on('submit', '#non_profits_site_form', function(e) {
-  processForm(e,$('form#non_profits_site_form').first())
+  var contact_response = $(this).children(".contact_response").html();
+  processForm(e,$('form#non_profits_site_form').first(),contact_response)
 })
 
 $('.lb_content_contain').on('submit', '#sponsors_site_form', function(e) {
-  processForm(e,$('form#sponsors_site_form').first())
+  var contact_response = $(this).children(".contact_response").html();
+  processForm(e,$('form#sponsors_site_form').first(),contact_response)
 })
 
 $('.lb_content_contain').on('submit', '#pitch_deck_site_form', function(e) {
-  processForm(e,$('form#pitch_deck_site_form').first())
+  var contact_response = $(this).children(".contact_response").html();
+  processForm(e,$('form#pitch_deck_site_form').first(),contact_response);
 })

@@ -99,6 +99,7 @@ img{max-width: 100%;}
 	position:relative;
 	top:6em;
 	width:60%;
+	transition: all .5s;
 	&[lb-type="contact"]{
 		padding: 4em 6em;
 		width: 25em;
@@ -130,6 +131,11 @@ img{max-width: 100%;}
 			max-width: calc(~"100% - .9em");
 			min-width: calc(~"100% - .9em");
 		}
+	}
+	&[lb-type="response"]{
+		padding: 2em 3em;
+		width: 25em;
+		text-align: center;
 	}
 }
 
@@ -590,6 +596,9 @@ img{max-width: 100%;}
 			margin-bottom: 0;
 		}
 	}
+}
+.contact_response{
+	display: none;
 }
 
 // ---------------Footer---------------
